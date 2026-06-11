@@ -105,3 +105,15 @@ def sublistas_aux(lista, res):
     else:
         res.append([lista[0]])
     return sublistas_aux(lista[1:], res)
+
+# Ejercicio 10 PILA
+def comprimir_repetidos(lista):
+    if lista == []:
+        return []
+    if len(lista) == 1:
+        return [[lista[0], 1]]
+    res = comprimir_repetidos(lista[1:])
+    if res[0][0] == lista[0]:
+        res[0][1] += 1
+        return res
+    return [[lista[0], 1]] + res
