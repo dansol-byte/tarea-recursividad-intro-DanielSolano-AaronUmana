@@ -28,3 +28,12 @@ def mayor_lista(lista):
     if lista[0] > mayor_resto:
         return lista[0]
     return mayor_resto
+
+# Ejercicio 4 COLA
+def invertir_numero(num):
+    return invertir_num_aux(num, 0)
+
+def invertir_num_aux(num, invertido):
+    if num == 0:
+        return invertido
+    return invertir_num_aux(num // 10, invertido * 10 + num % 10)
