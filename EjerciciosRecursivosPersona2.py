@@ -80,3 +80,12 @@ def separar_aux(num, pares, impares, pos_par, pos_impar):
         impares = digito * pos_impar + impares
         pos_impar *= 10
     return separar_aux(num // 10, pares, impares, pos_par, pos_impar)
+
+# Ejercicio 8 PILA
+def detectar_valles(lista):
+    if len(lista) < 3:
+        return []
+    res = detectar_valles(lista[1:])
+    if lista[1] < lista[0] and lista[1] < lista[2]:
+        return [[lista[0], lista[1], lista[2]]] + res
+    return res
