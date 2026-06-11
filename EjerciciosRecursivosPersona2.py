@@ -89,3 +89,19 @@ def detectar_valles(lista):
     if lista[1] < lista[0] and lista[1] < lista[2]:
         return [[lista[0], lista[1], lista[2]]] + res
     return res
+
+# Ejercicio 9 COlA
+def sublistas_ascendentes(lista):
+    if lista == []:
+        return []
+    return sublistas_aux(lista[1:], [[lista[0]]])
+
+def sublistas_aux(lista, res):
+    if lista == []:
+        return res
+    ultimo = res[-1][-1]
+    if lista[0] > ultimo:
+        res[-1].append(lista[0])
+    else:
+        res.append([lista[0]])
+    return sublistas_aux(lista[1:], res)
