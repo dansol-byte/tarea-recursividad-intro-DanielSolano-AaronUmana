@@ -18,3 +18,13 @@ def contar_pares(num):
         return 1 + contar_pares(num // 10)
     return contar_pares(num // 10)
 
+# Ejercicio 3 PILA
+def mayor_lista(lista):
+    if len(lista) == 1:
+        return lista[0]
+    
+    mayor_resto = mayor_lista(lista[1:])
+
+    if lista[0] > mayor_resto:
+        return lista[0]
+    return mayor_resto
