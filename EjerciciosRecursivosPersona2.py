@@ -37,3 +37,16 @@ def invertir_num_aux(num, invertido):
     if num == 0:
         return invertido
     return invertir_num_aux(num // 10, invertido * 10 + num % 10)
+
+# Ejercicio 5 COLA
+def eliminar_impares(num):
+    return eliminar_imp_aux(num, 0, 1)
+
+def eliminar_imp_aux(num, res, pos):
+    if num == 0:
+        return res
+    digito = num % 10
+    if digito % 2 == 0:
+        res = digito * pos + res
+        pos *= 10
+    return eliminar_imp_aux(num // 10, res, pos)
