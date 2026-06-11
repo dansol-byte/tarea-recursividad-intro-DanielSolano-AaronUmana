@@ -1,6 +1,7 @@
-# Estudiante 1
+
 #DANIEL SOLANO BARBOZA
 #Tarea de recursividad
+#Ejercicios de estudiante 1
 
 
 def contar_digitos (num):
