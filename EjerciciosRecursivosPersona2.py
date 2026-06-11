@@ -63,3 +63,20 @@ def contar_bloques_aux(lista, bloques):
     if lista[0] != lista[1]:
         bloques += 1
     return contar_bloques_aux(lista[1:], bloques)
+
+# Ejercicio 7 COLA
+def separar_por_paridad(num):
+    pares, impares = separar_aux(num, 0, 0, 1, 1)
+    return [pares, impares]
+
+def separar_aux(num, pares, impares, pos_par, pos_impar):
+    if num == 0:
+        return pares, impares
+    digito = num % 10
+    if digito % 2 == 0:
+        pares = digito * pos_par + pares
+        pos_par *= 10
+    else:
+        impares = digito * pos_impar + impares
+        pos_impar *= 10
+    return separar_aux(num // 10, pares, impares, pos_par, pos_impar)
