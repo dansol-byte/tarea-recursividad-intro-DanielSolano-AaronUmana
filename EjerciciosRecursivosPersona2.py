@@ -50,3 +50,16 @@ def eliminar_imp_aux(num, res, pos):
         res = digito * pos + res
         pos *= 10
     return eliminar_imp_aux(num // 10, res, pos)
+
+# Ejercicio 6 COLA
+def contar_bloques_iguales(lista):
+    if lista == []:
+        return 0
+    return contar_bloques_aux(lista, 1)
+
+def contar_bloques_aux(lista, bloques):
+    if len(lista) == 1:
+        return bloques
+    if lista[0] != lista[1]:
+        bloques += 1
+    return contar_bloques_aux(lista[1:], bloques)
